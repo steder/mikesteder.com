@@ -27,80 +27,6 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-      <style>
-      body
-      {
-        min-width: 500px;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
-
-    <style>
-      /**
-      * CSS Timeline Styles
-      */
-
-      ul.events {
-        list-style-type: none;
-        margin: 0;
-        padding: 0 0 20px 0;
-      }
-
-      ul.events li {
-        -webkit-border-radius: 11px;
-        -moz-border-radius: 11px;
-        border-radius: 11px;
-        background: #eee;
-        border: 1px solid #ddd;
-        color: #707070;
-        font-size: 1.2em;
-        font-weight: bold;
-        margin-bottom: 6px;
-        padding: 3px 0;
-        position: relative;
-        text-align: center;
-      }
-
-      ul.events li em {
-        color: #aaa;
-        font-weight: normal;
-        font-size: 0.9em;
-      }
-
-      ul.intervals {
-        list-style-type: none;
-        padding: 0;
-        display: block;
-      }
-
-      /* The width depends on the number of intervals. For example 100 / 12 = 8.333% -- then subtract a little bit for room for the borders */
-      ul.intervals li {
-        background: #fff url(/images/1x1_eee.gif) repeat-x left 10%;
-        border-right: 1px solid #ccc;
-        color: #999;
-        float: left;
-        font-size: 1.2em;
-        margin: 0;
-        padding: 15px 0;
-        text-align: center;
-        width: 7.0%;
-      }
-
-      ul.intervals li.first {
-        border-left: 1px solid #ccc;
-      }
-    </style>
-
-    <!--[if IE]>
-        <style type="text/css">
-            ul.intervals li {
-                width: 7.00%;
-            }
-        </style>
-    <![endif]-->
-
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
@@ -116,88 +42,59 @@
             <ul class="nav">
               <li><a href="index.html">Home</a></li>
               <li class="active"><a href="about.html">About</a></li>
+              <li><a href="timeline.html">Timeline</a></li>
               <li><a href="http://blog.penzilla.net/">Blog</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="http://github.com/steder">GitHub</a><li>
+              <li><a href="http://bitbucket.org/steder">Bitbucket</a><li>
+              <li><a href="http://code.google.com/u/steder/">G</a><li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-    <div class="page-header">
-      <h1>About Mike</h1>
+  <div class="container-fluid">
+    <div class="span8">
+      <h2>About Mike</h2>
+      <p>Despite being incredibly handsome and popular I was drawn to the quiet dignity of software development for a major multinational corporation.  My years of experience editing the highschool poetry magazine and playing videogames gave me a solid foundation for my career in software development.</p>
+      <h2><a name="software">Projects</a></h2>
+      <p>Some projects I've worked on over the years:</p>
+      <h3><a href="#">txTemplate - Interface for template engines in Twisted</a></h3>
+      <p>Provides simple integration between Twisted's Asynchronous API
+         and the synchronous APIs of many Python template systems so you can use
+         Twiste and Jinja2 (or Genshi or Clearsilver).
+      </p>
+      <h3><a href="#">Goose - Migration Tool</a></h3>
+      <p>A really simple SQL Migration tool.</p>
+      <h3><a href="#">Scrabbleator - Word search</a></h3>
+      <p>I spent some time working up algorithms to find Scrabble words and published a simple
+      web service (Twisted Web with an AJAX UI).</p>
+      <h3><a href="#">MaroonMPI - Python Wrapper for MPICH2</a></h3>
+      <p>A python interface to MySQL I wrote while working at the University of Chicago Climate Systems Group</p>
+      <h3><a href="#">Python Tutorials</a></h3>
+      <p>These Python tutorials were one of my earliest projects.  I
+    started working on these to help introduce Python to a local
+    programming user group.</p>
+      <h2><a name="agile">Agile</a></h2>
+      <p>I use and implement Test Driven Development, Scrumm, Continuous Integration &amp; Deployment everywhere I go.</p>
+      <h2><a name="cloud">Cloud Integration</a></h2>
+      <p>I've used cloud services like AWS for the last couple years like S3, EC2, and EMR</p>
+      <ul>
+        <li>I've written map-reduce algorithms using Hadoop and S3
+        on top of Amazon Elastic Map Reduce</li>
+        <li>I've written code to manage and deploy machines in AWS EC2 and Rackspace Cloud.</li>
+      </ul>
     </div>
+  </div>
+  <hr/>
 
-    <div class="container-fluid">
-      <div class="span8">
-        <h2><a name="timeline">Timeline</a></h2>
-        <p>An overview of my background:</p>
-        <div class="timeline">
-          <ul class="events">
-            <li style="width: 91%; left: 5.0%;">Programming<em style="display: none;">(1999 - 2012)</em></li>
-            <li style="width: 50%; left: 5.0%;">C/C++<em style="display: none;">(2002 - 2012)</em></li>
-            <!-- <li style="width: 30.5%; left: 10.2%">University<em style="display: none;">(2000-2004)</em></li>
-                 <li style="width: 15.5%; left: 10.2%">Labview<em style="display: none;">(2000-2002)</em></li> -->
-            <li style="width: 70%; left: 25.7%;">*nix (Gentoo, Ubuntu, Mac OS X)<em style="display: none;">(2002 - 2012)</em></li>
-            <!-- <li style="width: 70%; left: 25.7%;">Emacs<em style="display: none;">(2002 - 2012)</em></li> -->
-            <li style="width: 70%; left: 25.7%;">Python<em style="display: none;">(2002 - 2012)</em></li>
-            <li style="width: 60.5%; left: 35.7%">VCS (CVS, SVN)<em style="display: none;">(2007-2012)</em></li>
-            <!-- <li style="width: 30.5%; left: 40.7%">World of Warcraft (Recovering)<em style="display: none;">(2004-2007)</em></li> -->
-            <li style="width: 55.5%; left: 40.7%">TDD (xUnit, Fitnesse, Cucumber)<em style="display: none;">(2007-2012)</em></li>
-            <li style="width: 20.5%; left: 75.7%">DVCS (Mercurial, Git)<em style="display: none;">(2007-2012)</em></li>
-            <li style="width: 35.5%; left: 60.7%">SQL<em style="display: none;">(2007-2012)</em></li>
-            <li style="width: 35.5%; left: 60.7%">Web UI (HTML, CSS, Javascript)<em style="display: none;">(2007-2012)</em></li>
-            <li style="width: 20.5%; left: 75.7%">NoSQL<em style="display: none;">(2009-2012)</em></li>
-            <li style="width: 20.5%; left: 75.7%">AWS<em style="display: none;">(2009-2012)</em></li>
-            <li style="width: 10.5%; left: 85.7%">Obj-C<em style="display: none;">(2011-2012)</em></li>
-          </ul> <!-- end .events -->
-
-          <ul class="intervals">
-            <li class="first">1999</li>
-            <li>2000</li>
-            <li>2001</li>
-            <li>2002</li>
-            <li>2003</li>
-            <li>2004</li>
-            <li>2005</li>
-            <li>2006</li>
-            <li>2007</li>
-            <li>2008</li>
-            <li>2009</li>
-            <li>2010</li>
-            <li>2011</li>
-            <li class="last">2012</li>
-          </ul> <!-- end .intervals -->
-        </div> <!-- end .timeline -->
-      </div> <!-- end container -->
+  <footer class="container-fluid">
+    <div class="span7">
+      <p>&copy; MS 2012</p>
     </div>
-    <hr/>
-
-    <div class="container-fluid">
-      <div class="span7">
-        <div class="row-fluid">
-          <h2><a name="software">Software Projects</a></h2>
-          <p>
-          <p><a href="http://github.com/steder">Github</a></p>
-        </div>
-        <div class="row-fluid">
-          <h2><a name="agile">Agile</a></h2>
-          <p>I use and train people in techniques like Test Driven Development, Kanban, Continuous Integration &amp; Deployment</p>
-        </div>
-        <div class="row-fluid">
-          <h2><a name="cloud">Cloud</a></h2>
-          <p>I've used cloud services like AWS for the last couple years like S3, EC2, and EMR</p>
-        </div>
-      </div>
-    </div>
-    <hr/>
-
-    <footer class="container-fluid">
-      <div class="span7">
-        <p>&copy; MS 2012</p>
-      </div>
-    </footer>
-
-
+  </footer>
 
   <!-- Le javascript
        ================================================== -->
