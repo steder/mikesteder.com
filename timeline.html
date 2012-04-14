@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mike Steder - Code Monkey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="bootstrap/doc/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+    <style>
+      /**
+      * CSS Timeline Styles
+      */
+
+      ul.events {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 0 20px 0;
+      }
+
+      ul.events li {
+        -webkit-border-radius: 11px;
+        -moz-border-radius: 11px;
+        border-radius: 11px;
+        background: #eee;
+        border: 1px solid #ddd;
+        color: #707070;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 6px;
+        padding: 3px 0;
+        position: relative;
+        text-align: center;
+      }
+
+      ul.events li em {
+        color: #aaa;
+        font-weight: normal;
+        font-size: 0.9em;
+      }
+
+      ul.intervals {
+        list-style-type: none;
+        padding: 0;
+        display: block;
+      }
+
+      /* The width depends on the number of intervals. For example 100 / 12 = 8.333% -- then subtract a little bit for room for the borders */
+      ul.intervals li {
+        background: #fff url(/images/1x1_eee.gif) repeat-x left 10%;
+        border-right: 1px solid #ccc;
+        color: #999;
+        float: left;
+        font-size: 1.2em;
+        margin: 0;
+        padding: 15px 0;
+        text-align: center;
+        width: 7.0%;
+      }
+
+      ul.intervals li.first {
+        border-left: 1px solid #ccc;
+      }
+    </style>
+
+    <!--[if IE]>
+        <style type="text/css">
+            ul.intervals li {
+                width: 7.00%;
+            }
+        </style>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Mike Steder</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="timeline.html">Timeline</a></li>
+              <li><a href="http://blog.penzilla.net/">Blog</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="span8">
+        <h2><a name="timeline">Timeline of Interests</a></h2>
+        <div class="timeline">
+          <ul class="events">
+            <li style="width: 91%; left: 5.0%;">Programming<em style="display: none;">(1999 - 2012)</em></li>
+            <li style="width: 50%; left: 5.0%;">C/C++<em style="display: none;">(2002 - 2012)</em></li>
+            <!-- <li style="width: 30.5%; left: 10.2%">University<em style="display: none;">(2000-2004)</em></li>
+                 <li style="width: 15.5%; left: 10.2%">Labview<em style="display: none;">(2000-2002)</em></li> -->
+          <li style="width: 70%; left: 25.7%;">*nix (Gentoo, Ubuntu, Mac OS X)<em style="display: none;">(2002 - 2012)</em></li>
+          <!-- <li style="width: 70%; left: 25.7%;">Emacs<em style="display: none;">(2002 - 2012)</em></li> -->
+          <li style="width: 70%; left: 25.7%;">Python<em style="display: none;">(2002 - 2012)</em></li>
+          <li style="width: 60.5%; left: 35.7%">VCS (CVS, SVN)<em style="display: none;">(2007-2012)</em></li>
+          <!-- <li style="width: 30.5%; left: 40.7%">World of Warcraft (Recovering)<em style="display: none;">(2004-2007)</em></li> -->
+          <li style="width: 55.5%; left: 40.7%">TDD (xUnit, Fitnesse, Cucumber)<em style="display: none;">(2007-2012)</em></li>
+          <li style="width: 20.5%; left: 75.7%">DVCS (Mercurial, Git)<em style="display: none;">(2007-2012)</em></li>
+          <li style="width: 35.5%; left: 60.7%">SQL<em style="display: none;">(2007-2012)</em></li>
+          <li style="width: 35.5%; left: 60.7%">Web UI (HTML, CSS, Javascript)<em style="display: none;">(2007-2012)</em></li>
+          <li style="width: 20.5%; left: 75.7%">NoSQL<em style="display: none;">(2009-2012)</em></li>
+          <li style="width: 20.5%; left: 75.7%">AWS<em style="display: none;">(2009-2012)</em></li>
+          <li style="width: 10.5%; left: 85.7%">Obj-C<em style="display: none;">(2011-2012)</em></li>
+        </ul> <!-- end .events -->
+
+        <ul class="intervals">
+          <li class="first">1999</li>
+          <li>2000</li>
+          <li>2001</li>
+          <li>2002</li>
+          <li>2003</li>
+          <li>2004</li>
+          <li>2005</li>
+          <li>2006</li>
+          <li>2007</li>
+          <li>2008</li>
+          <li>2009</li>
+          <li>2010</li>
+          <li>2011</li>
+          <li class="last">2012</li>
+        </ul> <!-- end .intervals -->
+      </div> <!-- end .timeline -->
+      </div>
+    </div> <!-- end container -->
+  </div>
+  <hr/>
+
+  <footer class="container-fluid">
+    <div class="span7">
+      <p>&copy; MS 2012</p>
+    </div>
+  </footer>
+
+  <!-- Le javascript
+       ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="bootstrap/docs/assets/js/jquery.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-button.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>
