@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+#-*- mode: python -*-
+"""
+Ynot write your own static site generating script?
+
+Usage:
+
+  ynot [<template_directory>] [--output <output_directory>]
+
+ynot defaults to using the directory "templates" for input
+and outputs to the current working directory.
+
+Templates prefaced with an underscore (_) will not be processed
+so a typically layout might be something like:
+
+  site/
+    bin/ynot # this script
+
+    # input source in templates/
+    templates/
+      _base.jinja2
+      index.jinja2
+      about.jinja2
+      timeline.jinja2
+
+    # static stuff:
+    js/
+    css/
+    imgs/
+    bootstrap/
+
+    # generated output:
+    index.html
+    about.html
+    timeline.html
+
+"""
+
+import os
+
+import jinja2
+
+
+def render(template_directory, template_name, output_path):
+    """
+    Setup Jinja2 environment with template_directory
+    Load contents of template_path into template
+    render template to string
+    write out to output_path
+    """
+    loader = jinja2.FileSystemLoader([template_directory,])
+    env = jinja2.Environment(loader=loader)
+    template = env.get_template(template_name)
+    with open(output_path, "w") as output:
+        output.write(template.render())
+
+
+def main(template_directory="templates", output_directory=os.curdir):
+    for path, dirnames, fnames in os.walk(template_directory):
+        print "path:", path
+        for fname in fnames:
+            base, ext = os.path.splitext(fname)
+            template_path = os.path.join(path, fname)
+            output_name = "%s.html" % (base,)
+            output_path = os.path.join(output_directory, output_name)
+            if not fname.startswith("_"):
+                render(template_directory, fname, output_path)
+
+
+if __name__=="__main__":
+    main()
+
+
