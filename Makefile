@@ -5,6 +5,7 @@ LESS_COMPRESSOR ?= `which lessc`
 WATCHR ?= `which watchr`
 
 default:
+	bin/ynot
 	lessc ${BOOTSTRAP_LESS} > css/bootstrap.css
 	lessc --compress ${BOOTSTRAP_LESS} > css/bootstrap.min.css
 	lessc ${BOOTSTRAP_RESPONSIVE_LESS} > css/bootstrap-responsive.css
