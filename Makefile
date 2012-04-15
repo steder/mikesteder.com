@@ -13,6 +13,20 @@ default:
 	uglifyjs -nc js/jquery-1.7.2.js > js/jquery.js
 	uglifyjs -nc js/bootstrap.js > js/bootstrap.min.js
 
+# presently all css is embedded or generated from less
+clean_css:
+	rm -f css/*.css
+
+clean_js:
+	rm -f js/bootstrap.js
+	rm -f js/bootstrap.min.js
+	rm -f js/jquery.js
+
+clean_html:
+	rm -f *.html
+
+clean: clean_css clean_js clean_html
+
 watch:
 	echo "Watching less files..."; \
 	watchr -e "watch('less/.*\.less') { system 'make' }"
