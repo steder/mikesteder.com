@@ -1,11 +1,27 @@
 {% extends "_base.jinja2" %}
+{% block head %}
+<script type="text/javascript">
+var taglines = ["that he's a CIA experiment gone wrong, and that he only eats cheese...",
+                "that his heart ticks like a watch, and that he's confused by stairs...",
+                "that he knows 2 facts about ducks, and both of them are wrong..."
+                ];
+function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+window.onload = function () {
+    var tagline_element = document.getElementById("tagline");
+    var tagline = taglines[randInt(0, taglines.length - 1)];
+    tagline_element.innerHTML = tagline;
+};
+</script>
+{% endblock %}
 {% block body %}
       <div class="span14">
         <div class="hero-unit">
           <div class="container-fluid">
             <div class="span8">
-              <h1>Lorem Ipsum</h1>
-              <p>This cat has nothing to do with anything!</p>
+              <h1>Some say</h1>
+			  <p id="tagline">This cat has nothing to do with anything!</p>
               <p>
                 <a class="btn btn-primary btn-large" href="about.html">
                   Learn more &raquo;
@@ -18,22 +34,21 @@
           </div>
         </div>
       </div>
-
-      <div class="span14">
-        <div class="span4">
-          <h2>Interests</h2>
-           <p>Mike practices Test Driven Development, Pair Programming, and Continuous Integration.</p>
-          <p><a class="btn" href="timeline.html">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
+      <div class="span4">
           <h2>Projects</h2>
            <p>Mike writes software in Python (and C++, Javascript, ML, Objective-C).</p>
           <p><a class="btn" href="projects.html">View details &raquo;</a></p>
+      </div>
+      <div class="span14">
+        <div class="span4">
+          <h2>Interests</h2>
+          <p>Mike practices Test Driven Development, Pair Programming, and Continuous Integration.</p>
+          <p><a class="btn" href="timeline.html">View details &raquo;</a></p>
         </div>
         <div class="span4">
           <h2>Contact</h2>
           <p>I'm always open to hear about new opportunities and to discuss projects</p>
-          <p><a class="btn" href="contact.html">View details &raquo;</a></p>
+          <p><a class="btn" href="about.html">View details &raquo;</a></p>
         </div>
       </div>
 {% endblock %}
