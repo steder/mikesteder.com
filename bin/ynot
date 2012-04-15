@@ -41,7 +41,7 @@ import os
 import jinja2
 
 
-def render(template_directory, template_name, output_path):
+def render(template_directory, template_name, output_path, template_context):
     """
     Setup Jinja2 environment with template_directory
     Load contents of template_path into template
@@ -52,19 +52,20 @@ def render(template_directory, template_name, output_path):
     env = jinja2.Environment(loader=loader)
     template = env.get_template(template_name)
     with open(output_path, "w") as output:
-        output.write(template.render())
+        output.write(template.render(template_context))
 
 
 def main(template_directory="templates", output_directory=os.curdir):
     for path, dirnames, fnames in os.walk(template_directory):
-        print "path:", path
         for fname in fnames:
             base, ext = os.path.splitext(fname)
             template_path = os.path.join(path, fname)
             output_name = "%s.html" % (base,)
             output_path = os.path.join(output_directory, output_name)
             if not fname.startswith("_"):
-                render(template_directory, fname, output_path)
+                print "Rendering %s to %s"%(template_path, output_path)
+                template_context = {"filename":output_name}
+                render(template_directory, fname, output_path, template_context)
 
 
 if __name__=="__main__":

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<!-- a change -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Mike Steder - Code Monkey</title>
+    <title>
+    {% block title %}
+    Mike Steder - Code Monkey
+    {% endblock %}
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,6 +30,10 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    {# block just for child templates to customize styles #}
+    {% block head %}
+    {% endblock %}
+
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -42,69 +49,40 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Mike Steder</a>
+          {% block nav %}
+          <a class="brand" href="index.html">Mike Steder</a>
           <div class="nav-collapse">
+            {% block nav_left %}
             <ul class="nav">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="timeline.html">Timeline</a></li>
+              <li{{ ' class="active"' if filename == 'index.html' }}><a href="index.html">Home</a></li>
+              <li{{ ' class="active"' if filename == 'about.html' }}><a href="about.html">About</a></li>
+              <li{{ ' class="active"' if filename == 'projects.html' }}><a href="projects.html">Projects</a></li>
+              <li{{ ' class="active"' if filename == 'timeline.html' }}><a href="timeline.html">Timeline</a></li>
               <li><a href="http://blog.penzilla.net/">Blog</a></li>
             </ul>
+            {% endblock %}
+            {% block nav_right %}
+            {% endblock %}
           </div><!--/.nav-collapse -->
+          {% endblock %}
         </div>
       </div>
     </div>
 
     <div class="container-fluid">
-      <div class="span14">
-        <div class="hero-unit">
-          <div class="container-fluid">
-            <div class="span8">
-              <h1>Code Monkey</h1>
-              <p>Mike makes it easy to pay someone to develop software for
-              the web today.</p>
-              <p>
-                <a class="btn btn-primary btn-large" href="about.html">
-                  Learn more &raquo;
-                </a>
-              </p>
-            </div>
-            <div class="span3">
-              <img src="http://placekitten.com/320/240"/>
-            </div>
-          </div>
-        </div>
-      </div>
+    {% block body %}
 
-      <div class="span14">
-        <div class="span4">
-          <h2>Projects</h2>
-           <p>Mike writes software in Python (and C++, Javascript, ML, Objective-C).</p>
-          <p><a class="btn" href="about.html#software">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Development</h2>
-           <p>Mike practices Test Driven Development, Pair Programming,
-      Continuous Integration & Deployment.</p>
-          <p><a class="btn" href="about.html#agile">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Cloud Integration</h2>
-          <p>Mike supports cloud computing on Rackspace and
-      Amazon Web Services.</p>
-          <p><a class="btn" href="about.html#cloud">View details &raquo;</a></p>
-        </div>
-      </div>
-
-
+    {% endblock %}
     </div> <!-- /container -->
 
     <hr/>
 
     <footer class="container-fluid">
+    {% block footer %}
       <div class="span10">
         <p>No cats were harmed in the making of this website.</p>
       </div>
+    {% endblock %}
     </footer>
 
     <!-- Le javascript

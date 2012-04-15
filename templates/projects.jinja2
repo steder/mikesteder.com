@@ -1,0 +1,29 @@
+{% extends "_base.jinja2" %}
+{% block nav_right %}
+            <ul class="nav pull-right">
+              <li><a href="http://github.com/steder">GitHub</a><li>
+              <li><a href="http://bitbucket.org/steder">Bitbucket</a><li>
+              <li><a href="http://code.google.com/u/steder/">G</a><li>
+            </ul>
+{% endblock %}
+{% block body %}
+      <h2><a name="software">Projects</a></h2>
+      <p>Some projects I've worked on over the years:</p>
+      <h3><a href="http://github.com/steder/txtemplate">txTemplate - Interface for template engines in Twisted</a></h3>
+      <p>Provides simple integration between Twisted's Asynchronous API
+         and the synchronous APIs of many Python template systems so you can use
+         Twiste and Jinja2 (or Genshi or Clearsilver).
+      </p>
+      <h3><a href="http://github.com/steder/goose">Goose - Migration Tool</a></h3>
+      <p>A really simple SQL Migration tool.</p>
+      <h3><a href="http://penzilla.net/scrabbleator">Scrabbleator - Word search</a></h3>
+      <p>I spent some time working up algorithms to find Scrabble words and published a simple
+      web service (Twisted Web with an AJAX UI).</p>
+      <h3><a href="http://github.com/steder/maroonmpi">MaroonMPI - Python Wrapper for MPICH2</a></h3>
+      <p>A python interface to MySQL I wrote while working at the University of Chicago Climate Systems Group</p>
+      <h3><a href="http://penzilla.net/tutorials/python">Python Tutorials</a></h3>
+      <p>These Python tutorials were one of my earliest projects.  I
+    started working on these to help introduce Python to a local
+    programming user group.</p>
+    </div>
+{% endblock %}
